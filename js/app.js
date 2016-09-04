@@ -62,10 +62,15 @@ var ViewModel = function() {
 	});
 	//then we set the curentCat to the first cat in the catList
 	this.currentCat = ko.observable( this.catList()[0] );
+	//cat selector
+	this.catSelector = function (i) {
+		console.log('hi');
+		self.currentCat(self.catList()[i()])
+	};
 	//uses var self
 	this.incrementCounter = function () {
 		self.currentCat().clickCount(self.currentCat().clickCount() + 1);
-	}
+	};
 	// this.incrementCounter = function () {
 	// 	this.clickCount(this.clickCount() + 1);
 	// }
